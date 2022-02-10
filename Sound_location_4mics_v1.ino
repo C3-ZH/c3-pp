@@ -84,7 +84,7 @@ void loop(){
         signalvalue__3 = signalvalue__3 * -1;
        }
   
-  for(n2 = 0;n2 <= 1000;n2++)
+  for(n2 = 0;n2 <= 500;n2++)
     {                                                  
      t1__0 = micros();                               //Mic 1
      new_sv__0 = analogRead(A0);
