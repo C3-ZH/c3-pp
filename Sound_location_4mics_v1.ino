@@ -19,129 +19,129 @@ void loop(){
  int n1;
  for (n1 = 0; n1 <= 3; n1++)
  {
-  float signalvalue__0;      //1st signal read variable for 1st mic
-  float new_sv__0;           //2nd signal read variable
-  float oldplusnew_sv__0;    //Sum of the 2 signal values
-  float integral_value__0;   //Approximate definite integral value for 1 trapezium
-  float total_iv__0 = 0;     //Total integral value so far
-  float t0__0;               //Time of 1st signal read
-  float t1__0;               //Time of 2nd signal read
-  float t10__0;              //Time difference (h of trapezium)
+  float signalvalue0;      //1st signal read variable for 1st mic
+  float new_sv0;           //2nd signal read variable
+  float oldplusnew_sv0;    //Sum of the 2 signal values
+  float integral_value0;   //Approximate definite integral value for 1 trapezium
+  float total_iv0 = 0;     //Total integral value so far
+  float t0_0;               //Time of 1st signal read
+  float t1_0;               //Time of 2nd signal read
+  float t10_0;              //Time difference (h of trapezium)
   
-  float signalvalue__1;      //2nd mic variables
-  float new_sv__1;
-  float oldplusnew_sv__1;
-  float integral_value__1;
-  float total_iv__1 = 0;
-  float t0__1;
-  float t1__1;
-  float t10__1;
+  float signalvalue1;      //2nd mic variables
+  float new_sv1;
+  float oldplusnew_sv1;
+  float integral_value1;
+  float total_iv1 = 0;
+  float t0_1;
+  float t1_1;
+  float t10_1;
   
-  float signalvalue__2;     //3rd mic variables
-  float new_sv__2;
-  float oldplusnew_sv__2;
-  float integral_value__2;
-  float total_iv__2 = 0;
-  float t0__2;
-  float t1__2;
-  float t10__2;
+  float signalvalue2;     //3rd mic variables
+  float new_sv2;
+  float oldplusnew_sv2;
+  float integral_value2;
+  float total_iv2 = 0;
+  float t0_2;
+  float t1_2;
+  float t10_2;
   
-  float signalvalue__3;     //4th mic variables
-  float new_sv__3;
-  float oldplusnew_sv__3;
-  float integral_value__3;
-  float total_iv__3 = 0;
-  float t0__3;
-  float t1__3;
-  float t10__3;
+  float signalvalue3;     //4th mic variables
+  float new_sv3;
+  float oldplusnew_sv3;
+  float integral_value3;
+  float total_iv3 = 0;
+  float t0_3;
+  float t1_3;
+  float t10_3;
   int n2;
 
-  t0__0 = micros();                             //Record time microprocessor has been operating when first signal is read
-  signalvalue__0 = analogRead(A0);              //Read signal from mic circuit
-  if (signalvalue__0 <= 0)                      
+  t0_0 = micros();                             //Record time microprocessor has been operating when first signal is read
+  signalvalue0 = analogRead(A0);              //Read signal from mic circuit
+  if (signalvalue0 <= 0)                      
        {                                        //Convert signal value to positive if negative
-        signalvalue__0 = signalvalue__0 * -1;
+        signalvalue0 = signalvalue0 * -1;
        }
   
-  t0__1 = micros();
-  signalvalue__1 = analogRead(A1);
-  if (signalvalue__1 <= 0)
+  t0_1 = micros();
+  signalvalue1 = analogRead(A1);
+  if (signalvalue1 <= 0)
        {
-        signalvalue__1 = signalvalue__1 * -1;
+        signalvalue1 = signalvalue1 * -1;
        }
   
-  t0__2 = micros();
-  signalvalue__2 = analogRead(A2);
-  if (signalvalue__2 <= 0)
+  t0_2 = micros();
+  signalvalue2 = analogRead(A2);
+  if (signalvalue2 <= 0)
        {
-        signalvalue__2 = signalvalue__2 * -1;
+        signalvalue2 = signalvalue2 * -1;
        }
   
-  t0__3 = micros();
-  signalvalue__3 = analogRead(A3);
-  if (signalvalue__3 <= 0)
+  t0_3 = micros();
+  signalvalue3 = analogRead(A3);
+  if (signalvalue3 <= 0)
        {
-        signalvalue__3 = signalvalue__3 * -1;
+        signalvalue3 = signalvalue3 * -1;
        }
   
   for(n2 = 0;n2 <= 500;n2++)
     {                                                  
-     t1__0 = micros();                               //Mic 1
-     new_sv__0 = analogRead(A0);
-     if (new_sv__0 <= 0)
+     t1_0 = micros();                               //Mic 1
+     new_sv0 = analogRead(A0);
+     if (new_sv0 <= 0)
        {
-        new_sv__0 = new_sv__0 * -1;
+        new_sv0 = new_sv0 * -1;
        }
-     oldplusnew_sv__0 = signalvalue__0 + new_sv__0;
-     t10__0 = t1__0 - t0__0;
-     integral_value__0 = (oldplusnew_sv__0 / 2) * t10__0;
-     total_iv__0 = total_iv__0 + integral_value__0;
-     signalvalue__0 = new_sv__0;
-     t0__0 = t1__0;
+     oldplusnew_sv0 = signalvalue0 + new_sv0;
+     t10_0 = t1_0 - t0_0;
+     integral_value0 = (oldplusnew_sv0 / 2) * t10_0;
+     total_iv0 = total_iv0 + integral_value0;
+     signalvalue0 = new_sv0;
+     t0_0 = t1_0;
 
-     t1__1 = micros();                              //Mic 2
-     new_sv__1 = analogRead(A1);
-     if (new_sv__1 <= 0)
+     t1_1 = micros();                              //Mic 2
+     new_sv1 = analogRead(A1);
+     if (new_sv1 <= 0)
        {
-        new_sv__1 = new_sv__1 * -1;
+        new_sv1 = new_sv1 * -1;
        }
-     oldplusnew_sv__1 = signalvalue__1 + new_sv__1;
-     t10__1 = t1__1 - t0__1;
-     integral_value__1 = (oldplusnew_sv__1 / 2) * t10__1;
-     total_iv__1 = total_iv__1 + integral_value__1;
-     signalvalue__1 = new_sv__1;
-     t0__1 = t1__1;
+     oldplusnew_sv1 = signalvalue1 + new_sv1;
+     t10_1 = t1_1 - t0_1;
+     integral_value1 = (oldplusnew_sv1 / 2) * t10_1;
+     total_iv1 = total_iv1 + integral_value1;
+     signalvalue1 = new_sv1;
+     t0_1 = t1_1;
 
-     t1__2 = micros();                              //Mic 3
-     new_sv__2 = analogRead(A2);
-     if (new_sv__2 <= 0)
+     t1_2 = micros();                              //Mic 3
+     new_sv2 = analogRead(A2);
+     if (new_sv2 <= 0)
        {
-        new_sv__2 = new_sv__2 * -1;
+        new_sv2 = new_sv2 * -1;
        }
-     oldplusnew_sv__2 = signalvalue__2 + new_sv__2;
-     t10__2 = t1__2 - t0__2;
-     integral_value__2 = (oldplusnew_sv__2 / 2) * t10__2;
-     total_iv__2 = total_iv__2 + integral_value__2;
-     signalvalue__2 = new_sv__2;
-     t0__2 = t1__2;
+     oldplusnew_sv2 = signalvalue2 + new_sv2;
+     t10_2 = t1_2 - t0_2;
+     integral_value2 = (oldplusnew_sv2 / 2) * t10_2;
+     total_iv2 = total_iv2 + integral_value2;
+     signalvalue2 = new_sv2;
+     t0_2 = t1_2;
 
-     t1__3 = micros();                              //Mic 4
-     new_sv__3 = analogRead(A3);
-     if (new_sv__3 <= 0)
+     t1_3 = micros();                              //Mic 4
+     new_sv3 = analogRead(A3);
+     if (new_sv3 <= 0)
        {
-        new_sv__3 = new_sv__3 * -1;
+        new_sv3 = new_sv3 * -1;
        }
-     oldplusnew_sv__3 = signalvalue__3 + new_sv__3;
-     t10__3 = t1__3 - t0__3;
-     integral_value__3 = (oldplusnew_sv__3 / 2) * t10__3;
-     total_iv__3 = total_iv__3 + integral_value__3;
-     signalvalue__3 = new_sv__3;
-     t0__3 = t1__3;
+     oldplusnew_sv3 = signalvalue3 + new_sv3;
+     t10_3 = t1_3 - t0_3;
+     integral_value3 = (oldplusnew_sv3 / 2) * t10_3;
+     total_iv3 = total_iv3 + integral_value3;
+     signalvalue3 = new_sv3;
+     t0_3 = t1_3;
      
      delay(10);
      }
   
-  if (integral_value__0 >= integral_value__1 && integral_value__0 >= integral_value__2 && integral_value__0 >= integral_value__3)
+  if (integral_value0 >= integral_value1 && integral_value0 >= integral_value2 && integral_value0 >= integral_value3)
   {
       analogWrite (E1, 255);        //Move forward if mic0 has highest integral value
       digitalWrite(M1, 0);
@@ -153,7 +153,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value__1 >= integral_value__0 && integral_value__1 >= integral_value__2 && integral_value__1 >= integral_value__3)
+  else if (integral_value1 >= integral_value0 && integral_value1 >= integral_value2 && integral_value1 >= integral_value3)
   {
       analogWrite (E1, 255);        //Rotate right 90 degrees and then move forward if mic1 has highest integral value
       digitalWrite(M1, 1);
@@ -170,7 +170,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value__2 >= integral_value__0 && integral_value__2 >= integral_value__1 && integral_value__2 >= integral_value__3)
+  else if (integral_value2 >= integral_value0 && integral_value2 >= integral_value1 && integral_value2 >= integral_value3)
   {
       analogWrite (E1, 255);        //Rotate right 180 degrees and then move forward if mic2 has highest integral value
       digitalWrite(M1, 1);
@@ -187,7 +187,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if(integral_value__3 >= integral_value__0 && integral_value__3 >= integral_value__1 && integral_value__3 >= integral_value__2)
+  else if(integral_value3 >= integral_value0 && integral_value3 >= integral_value1 && integral_value3 >= integral_value2)
   {
       analogWrite (E1, 255);        //Rotate left 90 degrees and then move forward if mic3 has highest integral value
       digitalWrite(M1, 0);
