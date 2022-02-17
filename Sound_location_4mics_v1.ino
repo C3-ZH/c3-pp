@@ -141,7 +141,7 @@ void loop(){
      delay(10);
      }
   
-  if (integral_value0 >= integral_value1 && integral_value0 >= integral_value2 && integral_value0 >= integral_value3)
+  if (integral_value0 <= integral_value1 && integral_value0 <= integral_value2 && integral_value0 <= integral_value3)
   {
       analogWrite (E1, 255);        //Move forward if mic0 has highest integral value
       digitalWrite(M1, 0);
@@ -153,7 +153,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value1 >= integral_value0 && integral_value1 >= integral_value2 && integral_value1 >= integral_value3)
+  else if (integral_value1 <= integral_value0 && integral_value1 <= integral_value2 && integral_value1 <= integral_value3)
   {
       analogWrite (E1, 255);        //Rotate right 90 degrees and then move forward if mic1 has highest integral value
       digitalWrite(M1, 1);
@@ -170,7 +170,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value2 >= integral_value0 && integral_value2 >= integral_value1 && integral_value2 >= integral_value3)
+  else if (integral_value2 <= integral_value0 && integral_value2 <= integral_value1 && integral_value2 <= integral_value3)
   {
       analogWrite (E1, 255);        //Rotate right 180 degrees and then move forward if mic2 has highest integral value
       digitalWrite(M1, 1);
@@ -187,7 +187,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if(integral_value3 >= integral_value0 && integral_value3 >= integral_value1 && integral_value3 >= integral_value2)
+  else if(integral_value3 <= integral_value0 && integral_value3 <= integral_value1 && integral_value3 <= integral_value2)
   {
       analogWrite (E1, 255);        //Rotate left 90 degrees and then move forward if mic3 has highest integral value
       digitalWrite(M1, 0);
