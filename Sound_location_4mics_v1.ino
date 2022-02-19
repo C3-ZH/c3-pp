@@ -80,7 +80,7 @@ void loop(){
         signalvalue3 = signalvalue3 * -1;
        }
   
-  for(n2 = 0;n2 <= 500;n2++)                        //Execute sound input processing n2 amount of times
+  for(n2 = 0;n2 <= 25000;n2++)                        //Execute sound input processing n2 amount of times
     {                                                  
      t1_0 = micros();                               //Microprocessor time operating when next signal is read
      new_sv0 = analogRead(A0);                      //Read analog signal again
@@ -129,8 +129,7 @@ void loop(){
      total_iv3 = total_iv3 + integral_value3;
      signalvalue3 = new_sv3;
      t0_3 = t1_3;
-     
-     delay(1);
+   
      }
   
   if (integral_value0 <= integral_value1 && integral_value0 <= integral_value2 && integral_value0 <= integral_value3) //If mic 1 detects a louder sound
