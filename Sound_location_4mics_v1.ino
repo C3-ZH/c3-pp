@@ -52,15 +52,17 @@ void loop(){
   float t10_3;
   int n2;
 
-  t0_0 = micros();                             //Record time microprocessor has been operating when first signal is read
-  signalvalue0 = analogRead(A0);              //Read signal from mic circuit
-  if (signalvalue0 <= 0)                      
+  t0_0 = micros();                                 //Record time microprocessor has been operating when first signal is read
+  signalvalue0 = analogRead(A0);                  //Read signal from mic circuit
+  signalvalue0 = 1 / (signalvalue0 * (5 / 1023)); //Convert sv to voltage value and uninvert
+  if (signalvalue0 <= 0)             
        {                                        //Convert signal value to positive if negative
         signalvalue0 = signalvalue0 * -1;
        }
   
   t0_1 = micros();
   signalvalue1 = analogRead(A1);
+  signalvalue1 = 1 / (signalvalue1 * (5 / 1023));
   if (signalvalue1 <= 0)
        {
         signalvalue1 = signalvalue1 * -1;
@@ -68,6 +70,7 @@ void loop(){
   
   t0_2 = micros();
   signalvalue2 = analogRead(A2);
+  signalvalue2 = 1 / (signalvalue2 * (5 / 1023));
   if (signalvalue2 <= 0)
        {
         signalvalue2 = signalvalue2 * -1;
@@ -75,6 +78,7 @@ void loop(){
   
   t0_3 = micros();
   signalvalue3 = analogRead(A3);
+  signalvalue3 = 1 / (signalvalue3 * (5 / 1023))
   if (signalvalue3 <= 0)
        {
         signalvalue3 = signalvalue3 * -1;
@@ -84,6 +88,7 @@ void loop(){
     {                                                  
      t1_0 = micros();                               //Microprocessor time operating when next signal is read
      new_sv0 = analogRead(A0);                      //Read analog signal again
+     new_sv0 = 1 / (new_sv0 * (5 / 1023))
      if (new_sv0 <= 0)                              //If signal value is negative convert to positive
        {
         new_sv0 = new_sv0 * -1;
@@ -96,6 +101,7 @@ void loop(){
 
      t1_1 = micros();                              //Repeat for Mic 2
      new_sv1 = analogRead(A1);
+     new_sv1 = 1 / (new_sv1 * (5 / 1023))
      if (new_sv1 <= 0)
        {
         new_sv1 = new_sv1 * -1;
@@ -108,6 +114,7 @@ void loop(){
 
      t1_2 = micros();                              // Reapeat for Mic 3
      new_sv2 = analogRead(A2);
+     new_sv2 = 1 / (new_sv2 * (5 / 1023))
      if (new_sv2 <= 0)
        {
         new_sv2 = new_sv2 * -1;
@@ -120,6 +127,7 @@ void loop(){
 
      t1_3 = micros();                              //Repeat for Mic 4
      new_sv3 = analogRead(A3);
+     new_sv3 = 1 / (new_sv3 * (5 / 1023))
      if (new_sv3 <= 0)
        {
         new_sv3 = new_sv3 * -1;
@@ -132,7 +140,7 @@ void loop(){
    
      }
   
-  if (integral_value0 <= integral_value1 && integral_value0 <= integral_value2 && integral_value0 <= integral_value3) //If mic 1 detects a louder sound
+  if (integral_value0 >= integral_value1 && integral_value0 >= integral_value2 && integral_value0 >= integral_value3) //If mic 1 detects a louder sound
   {
       analogWrite (E1, 255);        //Move forward
       digitalWrite(M1, 0);
@@ -144,7 +152,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value1 <= integral_value0 && integral_value1 <= integral_value2 && integral_value1 <= integral_value3) //If mic 2 detects a louder sound
+  else if (integral_value1 >= integral_value0 && integral_value1 >= integral_value2 && integral_value1 >= integral_value3) //If mic 2 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate right 90 degrees and then move forward
       digitalWrite(M1, 1);
@@ -161,7 +169,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value2 <= integral_value0 && integral_value2 <= integral_value1 && integral_value2 <= integral_value3) //If mic 3 detects a louder sound
+  else if (integral_value2 >= integral_value0 && integral_value2 >= integral_value1 && integral_value2 >= integral_value3) //If mic 3 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate right 180 degrees and then move forward
       digitalWrite(M1, 1);
@@ -178,7 +186,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if(integral_value3 <= integral_value0 && integral_value3 <= integral_value1 && integral_value3 <= integral_value2) //If mic 4 detects a louder sound
+  else if(integral_value3 >= integral_value0 && integral_value3 >= integral_value1 && integral_value3 >= integral_value2) //If mic 4 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate left 90 degrees and then move forward
       digitalWrite(M1, 0);
