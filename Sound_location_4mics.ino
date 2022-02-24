@@ -80,7 +80,7 @@ void loop(){
         signalvalue3 = signalvalue3 * -1;
        }
   
-  for(n2 = 0;n2 <= 2000;n2++)                        //Execute sound input processing n2 amount of times
+  for(n2 = 0;n2 <= 10000;n2++)                        //Execute sound input processing n2 amount of times
     {                                                  
      t1_0 = micros();                               //Microprocessor time operating when next signal is read
      new_sv0 = analogRead(A0);                      //Read analog signal again
