@@ -57,10 +57,10 @@ void loop(void)
     Serial.read();
   }
 
-  analogWrite (E1, rightspeed);        /*Deploy user inputs to robot to make it move*/
-  digitalWrite(M1, rightdirection);
-  analogWrite (E2, leftspeed);
-  digitalWrite(M2, leftdirection);
+  analogWrite (E1, leftspeed);        /*Deploy user inputs to robot to make it move*/
+  digitalWrite(M1, leftdirection);
+  analogWrite (E2, rightspeed);
+  digitalWrite(M2, rightdirection);
   delay(delay_time);
 
   analogWrite (E1, 0);            /*Stop the robot*/
