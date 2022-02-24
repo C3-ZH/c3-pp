@@ -80,7 +80,7 @@ void loop(){
         signalvalue3 = signalvalue3 * -1;
        }
   
-  for(n2 = 0;n2 <= 25000;n2++)                        //Execute sound input processing n2 amount of times
+  for(n2 = 0;n2 <= 2000;n2++)                        //Execute sound input processing n2 amount of times
     {                                                  
      t1_0 = micros();                               //Microprocessor time operating when next signal is read
      new_sv0 = analogRead(A0);                      //Read analog signal again
@@ -147,9 +147,9 @@ void loop(){
   else if (integral_value1 <= integral_value0 && integral_value1 <= integral_value2 && integral_value1 <= integral_value3) //If mic 2 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate right 90 degrees and then move forward
-      digitalWrite(M1, 1);
+      digitalWrite(M1, 0);
       analogWrite (E2, 255);
-      digitalWrite(M2, 0);
+      digitalWrite(M2, 1);
       delay(500);
       analogWrite (E1, 255);        
       digitalWrite(M1, 0);
@@ -164,10 +164,10 @@ void loop(){
   else if (integral_value2 <= integral_value0 && integral_value2 <= integral_value1 && integral_value2 <= integral_value3) //If mic 3 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate right 180 degrees and then move forward
-      digitalWrite(M1, 1);
+      digitalWrite(M1, 0);
       analogWrite (E2, 255);
-      digitalWrite(M2, 0);
-      delay(1000);
+      digitalWrite(M2, 1);
+      delay(2000);
       analogWrite (E1, 255);        
       digitalWrite(M1, 0);
       analogWrite (E2, 255);
@@ -181,9 +181,9 @@ void loop(){
   else if(integral_value3 <= integral_value0 && integral_value3 <= integral_value1 && integral_value3 <= integral_value2) //If mic 4 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate left 90 degrees and then move forward
-      digitalWrite(M1, 0);
+      digitalWrite(M1, 1);
       analogWrite (E2, 255);
-      digitalWrite(M2, 1);
+      digitalWrite(M2, 0);
       delay(500);
       analogWrite (E1, 255);        
       digitalWrite(M1, 0);
