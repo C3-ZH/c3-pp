@@ -54,7 +54,7 @@ void loop(){
 
   t0_0 = micros();                                 //Record time microprocessor has been operating when first signal is read
   signalvalue0 = analogRead(A0);                  //Read signal from mic circuit
-  signalvalue0 = 1 / (signalvalue0 * (5 / 1023)); //Convert sv to voltage value and uninvert
+  signalvalue0 = 1 / (signalvalue0 * (5 / 1023)); //Convert sv and inver to get nominal voltage value
   if (signalvalue0 <= 0)             
        {                                        //Convert signal value to positive if negative
         signalvalue0 = signalvalue0 * -1;
