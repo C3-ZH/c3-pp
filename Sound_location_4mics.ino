@@ -145,7 +145,7 @@ void loop(){
    
      }
   
-  if (integral_value0 <= integral_value1 && integral_value0 <= integral_value2 && integral_value0 <= integral_value3) //If mic 1 detects a louder sound
+  if (integral_value0 >= integral_value1 && integral_value0 >= integral_value2 && integral_value0 >= integral_value3) //If mic 1 detects a louder sound
   {
       analogWrite (E1, 255);        //Move forward
       digitalWrite(M1, 0);
@@ -157,7 +157,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value1 <= integral_value0 && integral_value1 <= integral_value2 && integral_value1 <= integral_value3) //If mic 2 detects a louder sound
+  else if (integral_value1 >= integral_value0 && integral_value1 >= integral_value2 && integral_value1 >= integral_value3) //If mic 2 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate right 90 degrees and then move forward
       digitalWrite(M1, 0);
@@ -174,7 +174,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if (integral_value2 <= integral_value0 && integral_value2 <= integral_value1 && integral_value2 <= integral_value3) //If mic 3 detects a louder sound
+  else if (integral_value2 >= integral_value0 && integral_value2 >= integral_value1 && integral_value2 >= integral_value3) //If mic 3 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate right 180 degrees and then move forward
       digitalWrite(M1, 0);
@@ -191,7 +191,7 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
-  else if(integral_value3 <= integral_value0 && integral_value3 <= integral_value1 && integral_value3 <= integral_value2) //If mic 4 detects a louder sound
+  else if(integral_value3 >= integral_value0 && integral_value3 >= integral_value1 && integral_value3 >= integral_value2) //If mic 4 detects a louder sound
   {
       analogWrite (E1, 255);        //Rotate left 90 degrees and then move forward
       digitalWrite(M1, 1);
