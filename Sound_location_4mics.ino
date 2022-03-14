@@ -62,7 +62,7 @@ void loop(){
   
   t0_1 = micros();
   signalvalue1 = analogRead(A1);
-  signalvalue1 = signalvalue1 - 70;
+  signalvalue1 = signalvalue1 - 522.5;
   if (signalvalue1 <= 0)
        {
         signalvalue1 = signalvalue1 * -1;
@@ -70,7 +70,7 @@ void loop(){
   
   t0_2 = micros();
   signalvalue2 = analogRead(A2);
-  signalvalue2 = signalvalue2 - 70;
+  signalvalue2 = signalvalue2 - 519;
   if (signalvalue2 <= 0)
        {
         signalvalue2 = signalvalue2 * -1;
@@ -78,7 +78,7 @@ void loop(){
   
   t0_3 = micros();
   signalvalue3 = analogRead(A3);
-  signalvalue3 = signalvalue3 - 70;
+  signalvalue3 = signalvalue3 - 532;
   if (signalvalue3 <= 0)
        {
         signalvalue3 = signalvalue3 * -1;
@@ -110,7 +110,7 @@ void loop(){
      signalvalue0 = new_sv0;                         //Overwrite first signal value to the value of the second signal read
      t0_0 = t1_0;                                    //Overwrite first time to the value of the second time
     
-     new_sv1 = new_sv1 - 70;
+     new_sv1 = new_sv1 - 522.5;
      if (new_sv1 <= 0)
        {
         new_sv1 = new_sv1 * -1;
@@ -121,7 +121,7 @@ void loop(){
      signalvalue1 = new_sv1;
      t0_1 = t1_1;
     
-     new_sv2 = new_sv2 - 70;
+     new_sv2 = new_sv2 - 519;
      if (new_sv2 <= 0)
        {
         new_sv2 = new_sv2 * -1;
@@ -132,7 +132,7 @@ void loop(){
      signalvalue2 = new_sv2;
      t0_2 = t1_2;
     
-     new_sv3 = new_sv3 - 70;
+     new_sv3 = new_sv3 - 532;
      if (new_sv3 <= 0)
        {
         new_sv3 = new_sv3 * -1;
