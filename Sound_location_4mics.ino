@@ -160,6 +160,43 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
+   
+  else if (total_iv0 >= total_iv1 && total_iv0 >= total_iv2 && total_iv0 >= total_iv3 && total_iv0 - 100 < total_iv1 < total_iv0 + 100)
+  {
+      analogWrite (E1, 125);       
+      digitalWrite(M1, 0);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 1);
+      delay(750);
+      analogWrite (E1, 125);        
+      digitalWrite(M1, 0);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 0);
+      delay(1500);
+      analogWrite (E1, 0);            
+      digitalWrite(M1, 0);
+      analogWrite (E2, 0);
+      digitalWrite(M2, 0);
+  }
+  
+    else if (total_iv0 >= total_iv1 && total_iv0 >= total_iv2 && total_iv0 >= total_iv3 && total_iv0 - 100 < total_iv3 < total_iv0 + 100)
+   {
+      analogWrite (E1, 130);       
+      digitalWrite(M1, 1);
+      analogWrite (E2, 130);
+      digitalWrite(M2, 0);
+      delay(750);
+      analogWrite (E1, 125);        
+      digitalWrite(M1, 0);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 0);
+      delay(1500);
+      analogWrite (E1, 0);            
+      digitalWrite(M1, 0);
+      analogWrite (E2, 0);
+      digitalWrite(M2, 0);
+  }
+   
   else if (total_iv1 >= total_iv0 && total_iv1 >= total_iv2 && total_iv1 >= total_iv3) //If mic 2 detects a louder sound
   {
       analogWrite (E1, 128);        //Rotate right 90 degrees and then move forward
@@ -194,6 +231,43 @@ void loop(){
       analogWrite (E2, 0);
       digitalWrite(M2, 0);
   }
+  
+    else if (total_iv2 >= total_iv0 && total_iv2 >= total_iv1 && total_iv2 >= total_iv3 && total_iv2 - 100 < total_iv1 < total_iv2 + 100)
+  {
+      analogWrite (E1, 125);       
+      digitalWrite(M1, 0);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 1);
+      delay(2300);
+      analogWrite (E1, 125);        
+      digitalWrite(M1, 0);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 0);
+      delay(1500);
+      analogWrite (E1, 0);            
+      digitalWrite(M1, 0);
+      analogWrite (E2, 0);
+      digitalWrite(M2, 0);
+  }
+   
+     else if (total_iv2 >= total_iv0 && total_iv2 >= total_iv1 && total_iv2 >= total_iv3 && total_iv2 - 100 < total_iv3 < total_iv2 + 100)
+  {
+      analogWrite (E1, 125);       
+      digitalWrite(M1, 1);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 0);
+      delay(2300);
+      analogWrite (E1, 125);        
+      digitalWrite(M1, 0);
+      analogWrite (E2, 125);
+      digitalWrite(M2, 0);
+      delay(1500);
+      analogWrite (E1, 0);            
+      digitalWrite(M1, 0);
+      analogWrite (E2, 0);
+      digitalWrite(M2, 0);
+  }
+  
   else if(total_iv3 >= total_iv0 && total_iv3 >= total_iv1 && total_iv3 >= total_iv2) //If mic 4 detects a louder sound
   {
       analogWrite (E1, 127);        //Rotate left 90 degrees and then move forward
