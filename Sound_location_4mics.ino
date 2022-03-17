@@ -150,11 +150,11 @@ void loop(){
   
   if (total_iv0 >= total_iv1 && total_iv0 >= total_iv2 && total_iv0 >= total_iv3) //If mic 1 detects a louder sound
   {
-      analogWrite (E1, 255);        //Move forward
+      analogWrite (E1, 125);        //Move forward
       digitalWrite(M1, 0);
-      analogWrite (E2, 255);
+      analogWrite (E2, 125);
       digitalWrite(M2, 0);
-      delay(500);
+      delay(1500);
       analogWrite (E1, 0);            
       digitalWrite(M1, 0);
       analogWrite (E2, 0);
@@ -162,16 +162,16 @@ void loop(){
   }
   else if (total_iv1 >= total_iv0 && total_iv1 >= total_iv2 && total_iv1 >= total_iv3) //If mic 2 detects a louder sound
   {
-      analogWrite (E1, 255);        //Rotate right 90 degrees and then move forward
+      analogWrite (E1, 128);        //Rotate right 90 degrees and then move forward
       digitalWrite(M1, 0);
-      analogWrite (E2, 255);
+      analogWrite (E2, 128);
       digitalWrite(M2, 1);
-      delay(500);
-      analogWrite (E1, 255);        
+      delay(1800);
+      analogWrite (E1, 125);        
       digitalWrite(M1, 0);
-      analogWrite (E2, 255);
+      analogWrite (E2, 125);
       digitalWrite(M2, 0);
-      delay(500);
+      delay(1500);
       analogWrite (E1, 0);            
       digitalWrite(M1, 0);
       analogWrite (E2, 0);
@@ -179,16 +179,16 @@ void loop(){
   }
   else if (total_iv2 >= total_iv0 && total_iv2 >= total_iv1 && total_iv2 >= total_iv3) //If mic 3 detects a louder sound
   {
-      analogWrite (E1, 255);        //Rotate right 180 degrees and then move forward
+      analogWrite (E1, 130);        //Rotate right 180 degrees and then move forward
       digitalWrite(M1, 0);
-      analogWrite (E2, 255);
+      analogWrite (E2, 130);
       digitalWrite(M2, 1);
-      delay(2000);
-      analogWrite (E1, 255);        
+      delay(3500);
+      analogWrite (E1, 125);        
       digitalWrite(M1, 0);
-      analogWrite (E2, 255);
+      analogWrite (E2, 125);
       digitalWrite(M2, 0);
-      delay(500);
+      delay(1500);
       analogWrite (E1, 0);            
       digitalWrite(M1, 0);
       analogWrite (E2, 0);
@@ -196,16 +196,16 @@ void loop(){
   }
   else if(total_iv3 >= total_iv0 && total_iv3 >= total_iv1 && total_iv3 >= total_iv2) //If mic 4 detects a louder sound
   {
-      analogWrite (E1, 255);        //Rotate left 90 degrees and then move forward
+      analogWrite (E1, 127);        //Rotate left 90 degrees and then move forward
       digitalWrite(M1, 1);
-      analogWrite (E2, 255);
+      analogWrite (E2, 127);
       digitalWrite(M2, 0);
-      delay(500);
-      analogWrite (E1, 255);        
+      delay(1800);
+      analogWrite (E1, 125);        
       digitalWrite(M1, 0);
-      analogWrite (E2, 255);
+      analogWrite (E2, 125);
       digitalWrite(M2, 0);
-      delay(500);
+      delay(1500);
       analogWrite (E1, 0);            
       digitalWrite(M1, 0);
       analogWrite (E2, 0);
