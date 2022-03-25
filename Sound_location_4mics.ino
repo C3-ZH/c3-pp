@@ -16,13 +16,17 @@ void setup(void)
 
 void loop(){
  
- int move_executions;
- for (move_executions = 0; move_executions <= 10; move_executions++)   //Execute sound location algorithm x times
+ float final_value = 100000000;
+ float total_iv0 = 0;     //Total integral value so far
+ float total_iv1 = 0;     //Total integral value so far
+ float total_iv2 = 0;     //Total integral value so far
+ float total_iv3 = 0;     //Total integral value so far
+ 
+ while (final_value < total_iv0 || final_value < total_iv1 || final_value < total_iv2 || final_value < total_iv3)   //Execute moves until certain sound value is reached
  {
   float signalvalue0;      //1st signal read variable for 1st mic
   float new_sv0;           //2nd signal read variable
   float integral_value0;   //Approximate definite integral value for 1 trapezium
-  float total_iv0 = 0;     //Total integral value so far
   float t0_0;               //Time of 1st signal read
   float t1_0;               //Time of 2nd signal read
   float t10_0;              //Time difference (h of trapezium)
@@ -30,7 +34,6 @@ void loop(){
   float signalvalue1;      //2nd mic variables
   float new_sv1;
   float integral_value1;
-  float total_iv1 = 0;
   float t0_1;
   float t1_1;
   float t10_1;
@@ -38,7 +41,6 @@ void loop(){
   float signalvalue2;     //3rd mic variables
   float new_sv2;
   float integral_value2;
-  float total_iv2 = 0;
   float t0_2;
   float t1_2;
   float t10_2;
@@ -46,7 +48,6 @@ void loop(){
   float signalvalue3;     //4th mic variables
   float new_sv3;
   float integral_value3;
-  float total_iv3 = 0;
   float t0_3;
   float t1_3;
   float t10_3;
