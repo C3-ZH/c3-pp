@@ -3,11 +3,11 @@ int E2 = 5; //M2 Speed Control
 int M1 = 8; //M1 Direction Control
 int M2 = 7; //M2 Direction Control
 void setup(void)
-{
-  pinMode(A0, INPUT);   //Enabling analog input pins for microphones
-  pinMode(A1, INPUT);
-  pinMode(A2, INPUT);
-  pinMode(A3, INPUT);
+{                       //Enabling analog input pins for microphones
+  pinMode(A0, INPUT);   //Front mic
+  pinMode(A1, INPUT);   //Right mic
+  pinMode(A2, INPUT);   //Rear mic
+  pinMode(A3, INPUT);   //Left mic
   int i;                      //Enabling digital pins for output to motors
   for (i = 5; i <= 8; i++)
     pinMode(i, OUTPUT);
