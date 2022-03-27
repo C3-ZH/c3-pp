@@ -22,7 +22,7 @@ void loop(){
  float total_iv2 = 0;     //Total integral value so far
  float total_iv3 = 0;     //Total integral value so far
  
- while (final_value < total_iv0 || final_value < total_iv1 || final_value < total_iv2 || final_value < total_iv3)   //Execute moves until certain sound value is reached
+ while (total_iv0 <  final_value || total_iv1 < final_value || total_iv2 < final_value || total_iv3 < final_value)   //Execute moves until certain sound value is reached
  {
   float signalvalue0;      //1st signal read variable for 1st mic
   float new_sv0;           //2nd signal read variable
