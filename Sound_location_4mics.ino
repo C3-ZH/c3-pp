@@ -114,7 +114,7 @@ void loop(){
         new_sv0 = new_sv0 * -1;
         }
      t10_0 = t1_0 - t0_0;                           //Find time difference between when the values were read
-     integral_value0 = (signalvalue0 + new_sv0 / 2) * t10_0; //Use trapezium rule to aprroximate part of the definite integral
+     integral_value0 = ((signalvalue0 + new_sv0) / 2) * t10_0; //Use trapezium rule to aprroximate part of the definite integral
      total_iv0 = total_iv0 + integral_value0;        //Add area of this trapezium to total integral value calculated so far
      signalvalue0 = new_sv0;                         //Overwrite first signal value to the value of the second signal read
      t0_0 = t1_0;                                    //Overwrite first time to the value of the second time
@@ -125,7 +125,7 @@ void loop(){
         new_sv1 = new_sv1 * -1;
        }
      t10_1 = t1_1 - t0_1;
-     integral_value1 = (signalvalue1 + new_sv1 / 2) * t10_1;
+     integral_value1 = ((signalvalue1 + new_sv1) / 2) * t10_1;
      total_iv1 = total_iv1 + integral_value1;
      signalvalue1 = new_sv1;
      t0_1 = t1_1;
@@ -136,7 +136,7 @@ void loop(){
         new_sv2 = new_sv2 * -1;
        }
      t10_2 = t1_2 - t0_2;
-     integral_value2 = (signalvalue2 + new_sv2 / 2) * t10_2;
+     integral_value2 = ((signalvalue2 + new_sv2) / 2) * t10_2;
      total_iv2 = total_iv2 + integral_value2;
      signalvalue2 = new_sv2;
      t0_2 = t1_2;
@@ -147,7 +147,7 @@ void loop(){
         new_sv3 = new_sv3 * -1;
        }
      t10_3 = t1_3 - t0_3;
-     integral_value3 = (signalvalue3 + new_sv3 / 2) * t10_3;
+     integral_value3 = ((signalvalue3 + new_sv3) / 2) * t10_3;
      total_iv3 = total_iv3 + integral_value3;
      signalvalue3 = new_sv3;
      t0_3 = t1_3;
