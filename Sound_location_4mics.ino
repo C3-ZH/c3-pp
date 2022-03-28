@@ -52,6 +52,11 @@ void loop(){
   float t1_3;
   float t10_3;
   int sample_no;
+   
+  total_iv0 = 0;    
+  total_iv1 = 0;     
+  total_iv2 = 0;     
+  total_iv3 = 0;
 
   t0_0 = micros();                             //Record time microprocessor has been operating when first signal is read
   signalvalue0 = analogRead(A0);              //Read signal from mic circuit
