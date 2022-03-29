@@ -51,7 +51,9 @@ void loop(){
   float t0_3;
   float t1_3;
   float t10_3;
-  int sample_no;
+   
+  int n;
+  int sample_no = 10000;
    
   total_iv0 = 0;    
   total_iv1 = 0;     
@@ -94,7 +96,7 @@ void loop(){
         signalvalue3 = signalvalue3 * -1;
        }
   
-  for(sample_no = 0; sample_no <= 10000; sample_no++)      //Execute sound input processing x amount of times
+  for(n = 0; n <= sample_no; n++)      //Execute sound input processing x amount of times
     {                                                  
      t1_0 = micros();                               //Microprocessor time operating when next signal is read
      new_sv0 = analogRead(A0);                      //Read analog signal again
