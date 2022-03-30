@@ -21,6 +21,7 @@ void loop(){
  float total_iv1 = 0;     //Total integral value so far
  float total_iv2 = 0;     //Total integral value so far
  float total_iv3 = 0;     //Total integral value so far
+ int halfrange = 10000;
  
  while (total_iv0 <  final_value || total_iv1 < final_value || total_iv2 < final_value || total_iv3 < final_value)   //Execute moves until certain sound value is reached
  {
@@ -162,7 +163,7 @@ void loop(){
   
   if (total_iv0 >= total_iv1 && total_iv0 >= total_iv2 && total_iv0 >= total_iv3) //If mic 1 detects a louder sound
   {
-      if (total_iv0 >= total_iv1 >= (total_iv0 - 1000))
+      if (total_iv0 >= total_iv1 >= (total_iv0 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate right 45 degrees and then move forward
        digitalWrite(M1, 0);
@@ -180,7 +181,7 @@ void loop(){
        digitalWrite(M2, 0);
       }
      
-      else if (total_iv0 >= total_iv3 >= (total_iv0 - 1000))
+      else if (total_iv0 >= total_iv3 >= (total_iv0 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate left 45 degrees and then move forward
        digitalWrite(M1, 1);
@@ -216,7 +217,7 @@ void loop(){
   else if (total_iv1 >= total_iv0 && total_iv1 >= total_iv2 && total_iv1 >= total_iv3) //If mic 2 detects a louder sound
   {
     
-      if (total_iv1 >= total_iv0 >= (total_iv1 - 1000))
+      if (total_iv1 >= total_iv0 >= (total_iv1 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate right 45 degrees and then move forward
        digitalWrite(M1, 0);
@@ -234,7 +235,7 @@ void loop(){
        digitalWrite(M2, 0);
       }
      
-      else if (total_iv1 >= total_iv2 >= (total_iv1 - 1000))
+      else if (total_iv1 >= total_iv2 >= (total_iv1 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate right 135 degrees and then move forward
        digitalWrite(M1, 0);
@@ -272,7 +273,7 @@ void loop(){
   }
   else if (total_iv2 >= total_iv0 && total_iv2 >= total_iv1 && total_iv2 >= total_iv3) //If mic 3 detects a louder sound
   {  
-      if (total_iv2 >= total_iv1 >= (total_iv2 - 1000))
+      if (total_iv2 >= total_iv1 >= (total_iv2 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate right 135 degrees and then move forward
        digitalWrite(M1, 0);
@@ -290,7 +291,7 @@ void loop(){
        digitalWrite(M2, 0);
       }
      
-      else if (total_iv2 >= total_iv3 >= (total_iv2 - 1000))
+      else if (total_iv2 >= total_iv3 >= (total_iv2 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate left 135 degrees and then move forward
        digitalWrite(M1, 1);
@@ -329,7 +330,7 @@ void loop(){
   
   else if(total_iv3 >= total_iv0 && total_iv3 >= total_iv1 && total_iv3 >= total_iv2) //If mic 4 detects a louder sound
   {  
-     if (total_iv3 >= total_iv0 >= (total_iv3 - 1000))
+     if (total_iv3 >= total_iv0 >= (total_iv3 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate left 45 degrees and then move forward
        digitalWrite(M1, 1);
@@ -347,7 +348,7 @@ void loop(){
        digitalWrite(M2, 0);
       }
      
-      else if (total_iv3 >= total_iv2 >= (total_iv3 - 1000))
+      else if (total_iv3 >= total_iv2 >= (total_iv3 - halfrange))
       {
        analogWrite (E1, 128);        //Rotate left 135 degrees and then move forward
        digitalWrite(M1, 1);
