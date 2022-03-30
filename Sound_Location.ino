@@ -30,6 +30,7 @@ void loop(){
   float t0_0;               //Time of 1st signal read
   float t1_0;               //Time of 2nd signal read
   float t10_0;              //Time difference (h of trapezium)
+  int offset0 = 511;
   
   float signalvalue1;      //2nd mic variables
   float new_sv1;
@@ -37,6 +38,7 @@ void loop(){
   float t0_1;
   float t1_1;
   float t10_1;
+  int offset1 = 511;
   
   float signalvalue2;     //3rd mic variables
   float new_sv2;
@@ -44,6 +46,7 @@ void loop(){
   float t0_2;
   float t1_2;
   float t10_2;
+  int offset2 = 511;
   
   float signalvalue3;     //4th mic variables
   float new_sv3;
@@ -51,6 +54,7 @@ void loop(){
   float t0_3;
   float t1_3;
   float t10_3;
+  int offset3 = 511;
    
   int n;
   int sample_no = 10000;
@@ -72,25 +76,25 @@ void loop(){
   t0_3 = micros();
   signalvalue3 = analogRead(A3);
    
-  signalvalue0 = signalvalue0 - 511;           //Account for offset in read signal value
+  signalvalue0 = signalvalue0 - offset0;           //Account for offset in read signal value
   if (signalvalue0 <= 0)                      
        {                                        //Convert signal value to positive if negative
         signalvalue0 = signalvalue0 * -1;
        }
   
-  signalvalue1 = signalvalue1 - 511;
+  signalvalue1 = signalvalue1 - offset1;
   if (signalvalue1 <= 0)
        {
         signalvalue1 = signalvalue1 * -1;
        }
   
-  signalvalue2 = signalvalue2 - 511;
+  signalvalue2 = signalvalue2 - offset2;
   if (signalvalue2 <= 0)
        {
         signalvalue2 = signalvalue2 * -1;
        }
    
-  signalvalue3 = signalvalue3 - 511;
+  signalvalue3 = signalvalue3 - offset3;
   if (signalvalue3 <= 0)
        {
         signalvalue3 = signalvalue3 * -1;
@@ -110,7 +114,7 @@ void loop(){
      t1_3 = micros();                              //Repeat for Mic 4
      new_sv3 = analogRead(A3);
     
-     new_sv0 = new_sv0 - 511;
+     new_sv0 = new_sv0 - offset0;
      if (new_sv0 <= 0)                              //If signal value is negative convert to positive
        {
         new_sv0 = new_sv0 * -1;
@@ -121,7 +125,7 @@ void loop(){
      signalvalue0 = new_sv0;                         //Overwrite first signal value to the value of the second signal read
      t0_0 = t1_0;                                    //Overwrite first time to the value of the second time
     
-     new_sv1 = new_sv1 - 511;
+     new_sv1 = new_sv1 - offset1;
      if (new_sv1 <= 0)
        {
         new_sv1 = new_sv1 * -1;
@@ -132,7 +136,7 @@ void loop(){
      signalvalue1 = new_sv1;
      t0_1 = t1_1;
     
-     new_sv2 = new_sv2 - 511;
+     new_sv2 = new_sv2 - offset2;
      if (new_sv2 <= 0)
        {
         new_sv2 = new_sv2 * -1;
@@ -143,7 +147,7 @@ void loop(){
      signalvalue2 = new_sv2;
      t0_2 = t1_2;
     
-     new_sv3 = new_sv3 - 511;
+     new_sv3 = new_sv3 - offset3;
      if (new_sv3 <= 0)
        {
         new_sv3 = new_sv3 * -1;
