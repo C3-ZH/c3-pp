@@ -44,7 +44,7 @@ float final_value = 50000000;
  float total_iv3 = 0;     //Total integral value so far
  int halfrange = 10000;
  
- while (total_iv0 <  final_value || total_iv1 < final_value || total_iv2 < final_value || total_iv3 < final_value)   //Execute moves until certain sound value is reached
+ while (total_iv0 <  final_value && total_iv1 < final_value && total_iv2 < final_value && total_iv3 < final_value)   //Execute moves until certain sound value is reached
  {
   float signalvalue0;      //1st signal read variable for 1st mic
   float new_sv0;           //2nd signal read variable
