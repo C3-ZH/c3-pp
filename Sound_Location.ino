@@ -16,7 +16,7 @@ void setup(void)
 
 void loop(){
  
- float final_value = 100000000;
+ float final_value = 50000000;
  float total_iv0 = 0;     //Total integral value so far
  float total_iv1 = 0;     //Total integral value so far
  float total_iv2 = 0;     //Total integral value so far
@@ -58,7 +58,7 @@ void loop(){
   int offset3 = 511;
    
   int n;
-  int sample_no = 10000;
+  int sample_no = 5000;
    
   total_iv0 = 0;    
   total_iv1 = 0;     
